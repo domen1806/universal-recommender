@@ -49,13 +49,13 @@ This is a major upgrade release with several new features. Backward compatibilit
 
 ## v0.4.0
 
- - This version requires PredictionIO-0.9.7-aml found [here](http://actionml/docs/install).
+ - This version requires PredictionIO-0.9.7-aml found [here](http://actionml.com/docs/install).
  - **New tuning params** are now available for each "indicator" type, making indicators with a small number of possible values much more useful&mdash;things like gender or category-preference. See docs for [configuring the UR](http://actionml.com/docs/ur_config) and look for the `indicators` parameter.
  - **New forms of recommendations backfill** allow all items to be recommended even if they have no user events yet. Backfill types include random and user defined. See docs for [configuring the UR](http://actionml.com/docs/ur_config) and look for the `rankings` parameter.
 
 ## v0.3.0
 
- - This version requires PredictionIO-0.9.7-aml from the ActionML repo [here](http://actionml/docs/install).
+ - This version requires PredictionIO-0.9.7-aml from the ActionML repo [here](http://actionml.com/docs/install).
  - **Implements a moving time window if events**: Now supports the `SelfCleanedDataSource` trait. Adding params to the `DataSource` part of `engine.json` allows control of de-duplication, property event compaction, and a time window of event. The time window is used to age out the oldest events. Note: this only works with the ActionML fork of PredictionIO found in the repo mentioned above.
  - **Parameter changed**: `backfillField: duration` to accept Scala Duration strings. This will require changes to all engine.json files that were using the older # of seconds duration.
  - **Event-types used in queries**: added support for indicator predictiveness testing with the MAP@k tool. This is so only certain mixes of user events are used at query time.
